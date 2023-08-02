@@ -13,7 +13,7 @@ body {
 }
 .a4 {
   width: 21cm;
-  height: 29.7cm;
+  height: 29.7cm!important;
   border: 0px solid black;
   margin: auto;
   padding: 0.5cm 1cm;
