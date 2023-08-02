@@ -5,12 +5,13 @@
   border: 0px solid red;
   box-sizing: border-box;
 }
+/* to perfectly center a4 page
 body {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+}*/
 .a4 {
   width: 21cm;
   height: 29.7cm!important;
