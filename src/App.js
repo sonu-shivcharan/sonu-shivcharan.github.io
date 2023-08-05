@@ -29,10 +29,11 @@ const Circles = (<div id="circle-container">
     <div>
       <h1>Hey I'm Sonu</h1>
       <p>A Web Developer</p>
+ <div className="action">
+      <a href="./BCA/FY/NEP-poster">Get Poster</a>
       </div>
-      <div className="action">
-      <a href="BCA/FY/NEP-poster">Get Poster</a>
       </div>
+     
       </section>
     );
   }
