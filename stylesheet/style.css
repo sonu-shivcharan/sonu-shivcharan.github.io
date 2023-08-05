@@ -169,7 +169,15 @@ section {
   padding:4rem 1rem;
 }
 
-
+.action-btn{
+  position:absolute;
+  background-color:#0d9ef2;
+  padding:10px;
+}
+.action-btn>a{
+  color: #ffffff;
+padding:10px;
+}
 /*--- media queries---*/
 /*--for small screens---*/
 @media(max-width: 460px) {
