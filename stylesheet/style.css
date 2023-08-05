@@ -123,7 +123,7 @@ html {
 }
 .circle {
   border-radius: 50%;
-  animation: rotate 1s ease 1;
+  animation: rotate 2s ease-out 1;
 }
 .circle1 {
   margin-top: -2rem;
