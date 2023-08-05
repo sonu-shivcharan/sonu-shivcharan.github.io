@@ -30,6 +30,9 @@ const Circles = (<div id="circle-container">
       <h1>Hey I'm Sonu</h1>
       <p>A Web Developer</p>
       </div>
+      <div className="action">
+      <a href="BCA/FY/NEP-poster">Get Poster</a>
+      </div>
       </section>
     );
   }
