@@ -173,6 +173,7 @@ section {
   position:absolute;
   background-color:#0d9ef2;
   padding:10px;
+  z-index:2;
 }
 .action-btn>a{
   color: #ffffff;
