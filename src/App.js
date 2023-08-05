@@ -2,7 +2,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header />
         <HeroSection />
         <AboutMeSection />
         <SkillsSection />
@@ -14,29 +13,7 @@ class App extends React.Component {
   }
 }
 
-class Header extends React.Component {
-  render() {
-    return (
-      <header id="header">
-      {/*-------header title------*/}
-      <div id="title" className="logo">
-      <i className="fa-solid fa-bars menu-icon"></i>
-      <h1>Sonu Shivcharan</h1>
-    
-      </div>
-      {/*----navbar----*/}
-      <div id="navbar">
-      <ul className="nav-list">
-      <li><a href="#about-me-section">About</a></li>
-     <li><a href="#projects-section">Projects</a></li>
-     <li> <a href="#contact-section">Contact</a></li>
-      </ul>
-      </div>
-      
-      </header>
-    );
-  }
-}
+
 
 class HeroSection extends React.Component {
   render() {
