@@ -41,7 +41,7 @@ html {
   width: 100vw;
   height: auto;
   background-color: #2694f5;
-  box-shadow: 0 5px 10px ##a7aeb5;
+  box-shadow: 0 5px 10px #a7aeb5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,7 +88,6 @@ html {
   font-size: 2rem;
   padding: 1rem;
   border-radius: 5px;
-  border: 1px solid #000167;
   box-shadow: 0 0 10px #999999;
   background-color: #fff;
   z-index: 3;
@@ -123,7 +122,7 @@ html {
 }
 .circle {
   border-radius: 50%;
-  animation: rotate 2s ease-out 1;
+  animation: rotate 2s ease 1;
 }
 .circle1 {
   margin-top: -2rem;
