@@ -9,6 +9,9 @@
 html {
   scroll-behavior: smooth;
 }
+body{
+  background-color:#737373;
+}
 /**header**/
 #header {
   width: 100vw;
