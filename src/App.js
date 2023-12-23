@@ -59,9 +59,7 @@ class App extends React.Component {
     updateState=((value=false, elem=null)=>{
       if(elem=="sideNav"){
         this.setState({isNavOpen: value});
-  setTimeout(()=>console.log(this.state), 500);
       }else if(elem=="sharePanel"){
-        console.log("Open share panel");
         this.setState({openSharePanel:value})
       }else{
         this.setState({isNavOpen: false,
@@ -441,7 +439,6 @@ class App extends React.Component {
     render() {
       const props = this.props;
       const {contact} = props;
-      console.log(props);
       let TagLine;
       if(typeof contact=="object"){
         TagLine = contact.tagline;
