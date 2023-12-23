@@ -59,9 +59,7 @@ class App extends React.Component {
     updateState=((value=false, elem=null)=>{
       if(elem=="sideNav"){
         this.setState({isNavOpen: value});
-  setTimeout(()=>console.log(this.state), 500);
       }else if(elem=="sharePanel"){
-        console.log("Open share panel");
         this.setState({openSharePanel:value})
       }else{
         this.setState({isNavOpen: false,
@@ -318,7 +316,7 @@ class App extends React.Component {
         {
           skills && skills.map((skill)=>{
           return (<div className={`skill ${(props.scrollTop>=props.scrollHeight-100)?'slideUp':'shiftDown'}`}key={skill.name}>
-          <p className="name">{skill.name} {parseInt((skill.level/100)*this.state.level)}%</p>
+          <p className="name">{skill.name} {skill.level}%</p>
           <div className="level-wrapper">
           <div className="level" style={{
               width: `${skill.level}%`,
@@ -441,7 +439,6 @@ class App extends React.Component {
     render() {
       const props = this.props;
       const {contact} = props;
-      console.log(props);
       let TagLine;
       if(typeof contact=="object"){
         TagLine = contact.tagline;
