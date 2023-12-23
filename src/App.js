@@ -316,7 +316,7 @@ class App extends React.Component {
         {
           skills && skills.map((skill)=>{
           return (<div className={`skill ${(props.scrollTop>=props.scrollHeight-100)?'slideUp':'shiftDown'}`}key={skill.name}>
-          <p className="name">{skill.name} {parseInt((skill.level/100)*this.state.level)}%</p>
+          <p className="name">{skill.name} {skill.level}%</p>
           <div className="level-wrapper">
           <div className="level" style={{
               width: `${skill.level}%`,
