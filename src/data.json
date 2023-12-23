@@ -1,0 +1,182 @@
+{
+  "navBar": {
+    "items":[{
+      "name":"About",
+      "url":"#about-me-section"
+    },
+      {
+        "name":"Skills",
+        "url":"#skills-section"
+      },
+      {
+        "name": "Projects",
+        "url":"#projects-section"
+      },
+      {
+        "name":"Contact",
+        "url":"#contact"
+      },
+      {
+        "name":"Download CV",
+        "url":"#"
+      }]
+  },
+  "aboutMe": {
+    "id": 0,
+    "name": "About Me",
+    "title":"Sonu Shivcharan",
+    "headLine": "Frontend Web Developer | Student at Dr. D. Y. Patil Arts, Commerce & Science College, Pimpri",
+    "profileImg": {
+      "url":"./images/profile (1).png",
+      "alt": "sonu"
+    },
+    "description":[
+      "I am a passionate and dedicated junior frontend web developer with a strong interest in creating user-friendly and visually appealing websites. I love to bring designs to life through code and have a keen eye for detail.",
+      "Throughout my journey as a frontend developer, I have gained experience in HTML, CSS, and JavaScript, with a focus on modern frameworks like React. I enjoy staying up-to-date with the latest industry trends and continuously learning new technologies to enhance my skills.",
+      "I am a collaborative team player and thrive in environments where I can contribute my skills while learning from others. I am eager to take on new challenges and work on exciting projects that allow me to expand my knowledge and grow as a professional frontend developer."
+    ]
+  },
+  "mySkills": {
+    "id":1,
+    "name": "Skills",
+    "skills":[{
+      "name": "HTML",
+      "level": "80",
+      "img": {
+        "url": "",
+        "alt": "html"
+      }
+    },
+      {
+        "name": "CSS",
+        "level" : "70",
+        "img": {
+          "url": "",
+          "alt": "css"
+        }
+      },
+      {
+        "name": "JavaScript",
+        "level" : "65",
+        "img": {
+          "url": "",
+          "alt": "javascript"
+        }
+      },
+      {
+        "name": "C programming",
+        "level" : "60",
+        "img": {
+          "url": "",
+          "alt": "c-programming"
+        }
+      },
+      {
+        "name": "JAVA",
+        "level" : "40",
+        "img": {
+          "url": "",
+          "alt": "java"
+        }
+      },
+      {
+        "name": "ReactJs",
+        "level" : "60",
+        "img": {
+          "url": "",
+          "alt": "reactjs"
+        }
+      },
+      {
+        "name": "Redux",
+        "level" : "40",
+        "img": {
+          "url": "",
+          "alt": "redux"
+        }
+      },
+      {
+        "name": "SASS",
+        "level" :"50",
+        "img": {
+          "url": "",
+          "alt": "sass"
+        }
+      },
+      {
+        "name": "jQuery",
+        "level" : "60",
+        "img": {
+          "url": "",
+          "alt": "jquery"
+        }
+      },
+      {
+        "name": "Bootstrap",
+        "level" : "50",
+        "img": {
+          "url": "",
+          "alt": "bootstrap"
+        }
+      }]
+  },
+  "projects": {
+    "items":[{
+      "id":0,
+      "name":"Markdown Previewer",
+      "url":"https://codepen.io/SonuShivcharan",
+      "img": {
+        "url":"./images/markdown-previewer.png",
+        "alt":"markdown"
+      }
+    },
+      {
+        "id":1,
+        "name":"Random Quote Machine",
+        "url":"https://codepen.io/SonuShivcharan",
+        "img": {
+          "url":"./images/random-quote.png",
+          "alt":"random-quote-machine"
+        }
+      },
+      {
+        "id":2,
+        "name":"Landing Page",
+        "url":"https://codepen.io/SonuShivcharan",
+        "img": {
+          "url":"./images/landing-page.png",
+          "alt":"Landing-page"
+        }
+      }]
+  },
+  "contact": {
+    "tagline": "Let's Work Together..."
+  },
+  "socialProfiles": {
+    "profile":[{
+      "name":"LinkedIn",
+      "url":"https://linkedin.com/in/sonushivcharan",
+      "fontAwesomeClass":"fa-brands fa-linkedin"
+    },
+      {
+        "name":"gitHub",
+        "url":"",
+        "fontAwesomeClass":"fa-brands fa-github"
+      },
+      {
+        "name":"Codepen",
+        "url": "https://codepen.io/SonuShivcharan",
+        "fontAwesomeClass":"fa-brands fa-codepen"
+      },
+      {
+        "name":"email",
+        "url":"mailto:sonushivcharan@outlook.com",
+        "fontAwesomeClass":"fa fa-envelope"
+      },
+      {
+        "name":"youtube",
+        "url":"",
+        "fontAwesomeClass":"fa-brands fa-youtube"
+      }]
+  }
+}

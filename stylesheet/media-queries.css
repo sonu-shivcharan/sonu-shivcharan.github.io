@@ -1,0 +1,39 @@
+@media(max-width: 480px) {
+  .menu-icon {
+    display: block;
+  }
+  #circle-container {
+    transform: scale(0.8);
+  }
+  #nav {
+    display: none;
+  }
+.name-and-headline .name{
+  text-align: center;
+  width:100%;
+}
+}
+@media(min-width:481px) and (max-width:767px) and (orientation:portrait){
+  #hero-section {
+    height: 70vh;
+  }
+}
+@media(min-width: 768px){
+  .menu-icon {
+    display: none!important;
+  }
+  #title h1 {
+    margin-left: 1rem;
+  }
+  #header {
+    padding: 0 calc(2rem + 1vw);
+  }
+}
+@media(min-width: 768px) and (orientation:portrait) {
+  #hero-section {
+    height: 50vh;
+  }
+  #skill-section{
+    max-height: 50vh;
+  }
+}
