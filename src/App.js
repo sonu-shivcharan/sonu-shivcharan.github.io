@@ -75,7 +75,7 @@ class App extends React.Component {
     render() {
   const state = this.state;
   let i;
-  i=(state.screenWidth<=480)?150: 450;
+  i=(state.screenWidth<=480)?100: 350;
       return (
         <div>
           <Header 
@@ -89,7 +89,7 @@ class App extends React.Component {
           <AboutMeSection scrollTop={state.scrollTop} aboutMe={state.aboutMe} isLoaded={state.isContentLoaded} updateState={this.updateState}/>
           <SkillsSection mySkills={state.mySkills} scrollHeight={(state.heroSectionHeight + state.aboutSectionHeight)-i} scrollTop={state.scrollTop} />
           <ProjectsSection projectItems={state.projects} scrollHeight={(state.heroSectionHeight + state.aboutSectionHeight + state.skillSectionHeight)-i} scrollTop={state.scrollTop} screenWidth={state.screenWidth}/>
-          <ContactSection contact={state.contact} scrollHeight={(state.heroSectionHeight + state.aboutSectionHeight + state.skillSectionHeight + state.projectsSectionHeight) - i}  scrollTop={state.scrollTop} />
+          <ContactSection contact={state.contact} scrollHeight={(state.heroSectionHeight + state.aboutSectionHeight + state.skillSectionHeight + state.projectsSectionHeight) - (i)}  scrollTop={state.scrollTop} />
           <Footer profiles={state.socialProfiles}/>
   
           <div className="modal flex" style={{
