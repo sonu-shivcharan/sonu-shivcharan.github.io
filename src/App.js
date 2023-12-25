@@ -34,6 +34,7 @@ class App extends React.Component {
       .catch((err)=>console.log("falied to fetch", err));
       document.getElementById("footer").style.position="relative";
     }
+    //updates state 
   componentDidUpdate(prevProps, prevState){
       const getHeight=((name)=> document.getElementById(name).offsetHeight);
       if(prevState.aboutSectionHeight==null){
@@ -55,7 +56,7 @@ class App extends React.Component {
       this.setState({screenWidth: window.innerWidth});
       console.log("resized to : ", this.state.screenWidth)
     }
-    
+    // updates the state according to the events 
     updateState=((event)=>{
   const classes = event.target.className;
   if(classes.indexOf("menu")>=0){
@@ -68,10 +69,12 @@ class App extends React.Component {
     this.setState({openSharePanel: false});
   }
   });
+  
   handleScroll=()=>{
       const scrollTop = window.pageYOffset;
         this.setState({scrollTop: scrollTop});
     };
+    
     render() {
   const state = this.state;
   let i;
