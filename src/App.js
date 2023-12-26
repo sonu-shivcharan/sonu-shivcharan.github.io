@@ -34,6 +34,7 @@ class App extends React.Component {
       .catch((err)=>console.log("falied to fetch", err));
       document.getElementById("footer").style.position="relative";
     }
+    //updates state 
   componentDidUpdate(prevProps, prevState){
       const getHeight=((name)=> document.getElementById(name).offsetHeight);
       if(prevState.aboutSectionHeight==null){
@@ -55,27 +56,29 @@ class App extends React.Component {
       this.setState({screenWidth: window.innerWidth});
       console.log("resized to : ", this.state.screenWidth)
     }
-    
-    updateState=((value=false, elem=null)=>{
-      if(elem=="sideNav"){
-        this.setState({isNavOpen: value});
-      }else if(elem=="sharePanel"){
-        this.setState({openSharePanel:value})
-      }else{
-        this.setState({isNavOpen: false,
-          openSharePanel:false
-        });
-      }
-     
-    });
+    // updates the state according to the events 
+    updateState=((event)=>{
+  const classes = event.target.className;
+  if(classes.indexOf("menu")>=0){
+    this.setState({isNavOpen:true})
+  }else if(classes.indexOf("modal")>=0 && this.state.isNavOpen){
+    this.setState({isNavOpen:false});
+  }else if(classes.indexOf("share")>=0){
+    this.setState({openSharePanel: true});
+  }else if(classes.indexOf("modal")>=0 && this.state.openSharePanel){
+    this.setState({openSharePanel: false});
+  }
+  });
+  
   handleScroll=()=>{
       const scrollTop = window.pageYOffset;
         this.setState({scrollTop: scrollTop});
     };
+    
     render() {
   const state = this.state;
   let i;
-  i=(state.screenWidth<=480)?150: 450;
+  i=(state.screenWidth<=480)?150: 350;
       return (
         <div>
           <Header 
@@ -89,7 +92,7 @@ class App extends React.Component {
           <AboutMeSection scrollTop={state.scrollTop} aboutMe={state.aboutMe} isLoaded={state.isContentLoaded} updateState={this.updateState}/>
           <SkillsSection mySkills={state.mySkills} scrollHeight={(state.heroSectionHeight + state.aboutSectionHeight)-i} scrollTop={state.scrollTop} />
           <ProjectsSection projectItems={state.projects} scrollHeight={(state.heroSectionHeight + state.aboutSectionHeight + state.skillSectionHeight)-i} scrollTop={state.scrollTop} screenWidth={state.screenWidth}/>
-          <ContactSection contact={state.contact} scrollHeight={(state.heroSectionHeight + state.aboutSectionHeight + state.skillSectionHeight + state.projectsSectionHeight) - i}  scrollTop={state.scrollTop} />
+          <ContactSection contact={state.contact} scrollHeight={(state.heroSectionHeight + state.aboutSectionHeight + state.skillSectionHeight + state.projectsSectionHeight) - (i)}  scrollTop={state.scrollTop} />
           <Footer profiles={state.socialProfiles}/>
   
           <div className="modal flex" style={{
@@ -119,9 +122,6 @@ class App extends React.Component {
     constructor(props){
       super(props);
     }
-    upliftState=()=>{
-      this.props.updateState(true, "sideNav");
-    }
     render() {
   let changeStyle={
     backgroundColor:"transparent",
@@ -136,7 +136,7 @@ class App extends React.Component {
         <header id="header" style={changeStyle}>
         {/*-------header title------*/}
         <div id="title">
-        <i className="fa-solid fa-bars menu-icon" onClick={this.upliftState} />
+        <i className="fa-solid fa-bars menu-icon" onClick={this.props.updateState} />
         <h1>Portfolio</h1>
         
         <div id="nav">
@@ -156,9 +156,7 @@ class App extends React.Component {
     constructor(props){
       super(props);
     }
-  upliftState=()=>{
-      this.props.updateState(false, "sideNav");
-    }
+
     render(){
       let sideNav={
         marginLeft:"0",
@@ -176,7 +174,7 @@ class App extends React.Component {
        {
          navItems && navItems.map((item)=>{
          return(
-           <a key={item.name+"Side"} href={item.url} className="side-nav-item" title={item.name} onClick={this.upliftState}>
+           <a key={item.name+"Side"} href={item.url} className="side-nav-item" title={item.name} onClick={this.props.updateState}>
            <li>{item.name}</li>
            </a>
            );
@@ -250,9 +248,6 @@ class App extends React.Component {
     constructor(props){
       super(props);
     }
-  upliftState=()=>{
-      this.props.updateState(true, "sharePanel");
-    }
     render() {
       const props= this.props;
   const {description} = props.aboutMe;
@@ -271,7 +266,7 @@ class App extends React.Component {
         <h2 className="name">Sonu Shivcharan</h2>
         <p className="headline">{headLine}</p>
    <div className="flex links">
-        <span className="connect">Connect +<span className="tool-tip">On LinkedIn</span></span> <span id="share-icon" onClick={this.upliftState}><i className="fa fa-share-nodes" style={{color:"#2ca2ff"}} /> </span>
+        <span className="connect">Connect +<span className="tool-tip">On LinkedIn</span></span> <span id="share-icon" onClick={this.props.updateState}><i className="fa fa-share-nodes" style={{color:"#2ca2ff"}} /> </span>
         </div>
         </div>
         
