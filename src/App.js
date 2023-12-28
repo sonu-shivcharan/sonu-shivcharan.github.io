@@ -67,6 +67,8 @@ class App extends React.Component {
     this.setState({openSharePanel: true});
   }else if(classes.indexOf("modal")>=0 && this.state.openSharePanel){
     this.setState({openSharePanel: false});
+  }else{
+    this.setState({isNavOpen:false})
   }
   });
   
