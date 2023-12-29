@@ -578,3 +578,9 @@ section>h2 {
   padding:1rem;
   z-index: 5;
 }
+#share-panel .share-icon{
+  font-size: 1.4rem;
+  padding: 0.2rem;
+  margin:0.3rem;
+  color:#2f363c;
+}
