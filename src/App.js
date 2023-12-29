@@ -64,9 +64,11 @@ class App extends React.Component {
   }else if(classes.indexOf("modal")>=0 && this.state.isNavOpen){
     this.setState({isNavOpen:false});
   }else if(classes.indexOf("share")>=0){
-    this.setState({openSharePanel: true});
+    this.handleShare();
   }else if(classes.indexOf("modal")>=0 && this.state.openSharePanel){
     this.setState({openSharePanel: false});
+  }else{
+    this.setState({isNavOpen:false})
   }
   });
   
@@ -74,7 +76,19 @@ class App extends React.Component {
       const scrollTop = window.pageYOffset;
         this.setState({scrollTop: scrollTop});
     };
-    
+  handleShare=()=>{
+    if(navigator.share){
+      const data ={
+        title:"Sonu Shivcharan-Portfolio",
+        url:document.location.href
+      };
+      navigator.share(data)
+      .then(()=>console.log("Thanks For sharing"))
+      .catch((err)=>err);
+    }else{
+    this.setState({openSharePanel: true});
+    }
+  }
     render() {
   const state = this.state;
   let i;
@@ -113,6 +127,20 @@ class App extends React.Component {
         <div className="panel-container flex" style={{width:"100%", position:"relative"}}>
         <div id="share-panel" style={{animation:"0.1s slideUp ease 1"}}>
         <h4>Share Via</h4>
+        <div className="flex">
+       <a href="whatsapp://send?text=https://sonu-shivcharan.github.io" data-action="share/whatsapp/share" target="_blank" className="share-icon"> 
+        <i className="fa-brands fa-whatsapp" />
+        </a>
+        <a href="#" className="share-icon">
+        <i className="fa-brands fa-facebook" />
+        </a>
+        <a href="#" className="share-icon">
+        <i className="fa fa-envelope" />
+        </a>
+        <a href="#" className="share-icon">
+        <i className="fa fa-copy" />
+        </a>
+        </div>
         </div>
         </div>
         )
