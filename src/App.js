@@ -135,7 +135,7 @@ class App extends React.Component {
         <i className="fa-brands fa-facebook" />
         </a>
         <a href="#" className="share-icon">
-        <i className="fa fa-envelop" />
+        <i className="fa fa-envelope" />
         </a>
         <a href="#" className="share-icon">
         <i className="fa fa-copy" />
