@@ -64,7 +64,7 @@ class App extends React.Component {
   }else if(classes.indexOf("modal")>=0 && this.state.isNavOpen){
     this.setState({isNavOpen:false});
   }else if(classes.indexOf("share")>=0){
-    this.setState({openSharePanel: true});
+    this.handleShare();
   }else if(classes.indexOf("modal")>=0 && this.state.openSharePanel){
     this.setState({openSharePanel: false});
   }else{
@@ -76,7 +76,19 @@ class App extends React.Component {
       const scrollTop = window.pageYOffset;
         this.setState({scrollTop: scrollTop});
     };
-    
+  handleShare=()=>{
+    if(navigator.share){
+      const data ={
+        title:"Sonu Shivcharan-Portfolio",
+        url:document.location.href
+      };
+      navigator.share(data)
+      .then(()=>console.log("Thanks For sharing"))
+      .catch((err)=>err);
+    }else{
+    this.setState({openSharePanel: true});
+    }
+  }
     render() {
   const state = this.state;
   let i;
