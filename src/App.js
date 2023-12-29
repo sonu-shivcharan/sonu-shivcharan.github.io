@@ -127,6 +127,20 @@ class App extends React.Component {
         <div className="panel-container flex" style={{width:"100%", position:"relative"}}>
         <div id="share-panel" style={{animation:"0.1s slideUp ease 1"}}>
         <h4>Share Via</h4>
+        <div className="flex">
+       <a href="whatsapp://send?text=https://sonu-shivcharan.github.io" data-action="share/whatsapp/share" target="_blank" className="share-icon"> 
+        <i className="fa-brands fa-whatsapp" />
+        </a>
+        <a href="#" className="share-icon">
+        <i className="fa-brands fa-facebook" />
+        </a>
+        <a href="#" className="share-icon">
+        <i className="fa fa-envelop" />
+        </a>
+        <a href="#" className="share-icon">
+        <i className="fa fa-copy" />
+        </a>
+        </div>
         </div>
         </div>
         )
