@@ -37,7 +37,9 @@ class App extends React.Component {
     //updates state 
   componentDidUpdate(prevProps, prevState){
       const getHeight=((name)=> document.getElementById(name).offsetHeight);
-      if(prevState.aboutSectionHeight==null){
+      const prevHeight =prevState.aboutSectionHeight;
+      const currHeight = getHeight("about-me-section");
+      if(prevHeight==null || prevHeight<currHeight){
       this.setState({
         heroSectionHeight : getHeight("hero-section"),
         aboutSectionHeight: getHeight("about-me-section"),
