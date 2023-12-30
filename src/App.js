@@ -92,7 +92,7 @@ class App extends React.Component {
     render() {
   const state = this.state;
   let i;
-  i=(state.screenWidth<=480)?150: 350;
+  i=(state.screenWidth<=480)?100: 350;
       return (
         <div>
           <Header 
