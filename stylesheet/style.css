@@ -95,7 +95,7 @@ background-attachment: fixed;*/
   top: 0;
   left: 0;
   overflow-y: auto;
-  background-color: #f0f9fe;
+  background-color: #fff;
   border-radius: 0 10px 10px 0;
   z-index: 5;
   transition: margin 0.3s ease;
@@ -111,7 +111,7 @@ background-attachment: fixed;*/
   text-decoration: none;
   width: 100%;
   padding: 1rem 0 1rem 2rem;
-  border-radius:;
+  border-radius:0 50px 50px 0;
 }
 .side-nav-item:hover {
   background-color: #d8ecff;
@@ -202,8 +202,7 @@ background-attachment: fixed;*/
   text-decoration: none;
 }
 .action-btn:hover {
-  color: #5e6f84;
-  border: 2px solid black;
+  outline: 5px solid rgba(165,210,249,0.805);
   transform: scale(0.98);
 }
 
