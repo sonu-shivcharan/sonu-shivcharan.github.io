@@ -7,7 +7,7 @@
 }
 
 html {
-  font-size: calc(16px + 0.5%);
+  font-size: calc(16px );
   scroll-behavior: smooth;
 }
 body {
@@ -44,7 +44,7 @@ background-attachment: fixed;*/
 }
 #title>h1 {
   width: 70%;
-  font-size: 1.3rem;
+  font-size: calc(1.3rem + 1%);
   text-align: left;
   border: 0px solid;
 
@@ -95,7 +95,7 @@ background-attachment: fixed;*/
   top: 0;
   left: 0;
   overflow-y: auto;
-  background-color: #f0f9fe;
+  background-color: #fff;
   border-radius: 0 10px 10px 0;
   z-index: 5;
   transition: margin 0.3s ease;
@@ -111,7 +111,7 @@ background-attachment: fixed;*/
   text-decoration: none;
   width: 100%;
   padding: 1rem 0 1rem 2rem;
-  border-radius:;
+  border-radius:0 50px 50px 0;
 }
 .side-nav-item:hover {
   background-color: #d8ecff;
@@ -150,7 +150,7 @@ background-attachment: fixed;*/
   justify-content: center;
   align-items: center;
   z-index: 0;
-  background-size: 100%;
+  background-size: cover;
 }
 #hero-section h1 {
   font-size: calc(2rem + 1vw);
@@ -202,8 +202,7 @@ background-attachment: fixed;*/
   text-decoration: none;
 }
 .action-btn:hover {
-  color: #5e6f84;
-  border: 2px solid black;
+  outline: 5px solid rgba(165,210,249,0.805);
   transform: scale(0.98);
 }
 
@@ -260,11 +259,6 @@ background-attachment: fixed;*/
   border: 1px solid #003b69;
   overflow: hidden;
   transition: 0.3s;
-  boxshadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
-  10px 10px 70px rgba(0, 0, 0, 0.25),
-  inset 5px 5px 10px rgba(0, 0, 0, 0.5),
-  inset 5px 5px 20px rgba(0, 25, 100, 0.5),
-  inset -5px -5px 15px rgba(0, 0, 0, 0.75);
 }
 .about-me-content:hover {}
 .profile-picture {
@@ -344,7 +338,7 @@ background-attachment: fixed;*/
   margin: 1rem;
 }
 .about-me-content .about p {
-  font-size: 0.66rem;
+  font-size: 0.7rem;
   font-family: "Poppins";
 }
 section {
@@ -368,7 +362,7 @@ section>h2 {
   margin: auto;
 }
 #skills-container {
-  width: 100%;
+  max-width: 65rem;
   margin: auto;
   padding: 2rem;
   display: flex;
