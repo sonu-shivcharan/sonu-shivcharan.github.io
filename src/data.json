@@ -124,7 +124,7 @@
     "items":[{
       "id":0,
       "name":"Markdown Previewer",
-      "url":"https://codepen.io/SonuShivcharan",
+      "url":"https://codepen.io/SonuShivcharan/full/NWLOKLq",
       "img": {
         "url":"./images/markdown-previewer.png",
         "alt":"markdown"
@@ -133,7 +133,7 @@
       {
         "id":1,
         "name":"Random Quote Machine",
-        "url":"https://codepen.io/SonuShivcharan",
+        "url":"https://codepen.io/SonuShivcharan/full/QWBjGxX",
         "img": {
           "url":"./images/random-quote.png",
           "alt":"random-quote-machine"
@@ -142,7 +142,7 @@
       {
         "id":2,
         "name":"Landing Page",
-        "url":"https://codepen.io/SonuShivcharan",
+        "url":"https://codepen.io/SonuShivcharan/full/mdXvXLx",
         "img": {
           "url":"./images/landing-page.png",
           "alt":"Landing-page"
