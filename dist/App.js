@@ -335,7 +335,7 @@ class HeroSection extends React.Component {
     let circle = {
       borderRadius: "50%",
       animation: "rotate 1s ease 1",
-      transition: "transform 0.3s ease",
+      transition: "transform 0.15s ease",
       transform: `rotate(${scrollTop >= 600 ? 300: 0.5 * scrollTop}deg)`
     };
 
