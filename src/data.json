@@ -147,7 +147,17 @@
           "url":"./images/landing-page.png",
           "alt":"Landing-page"
         }
-      }]
+      },
+       {
+        "id":3,
+        "name":"NEP Poster",
+        "url":"https://sonu-shivcharan.github.io/BCA/FY/NEP-poster/",
+        "img": {
+          "url":"./images/Screenshots/Screenshot (1).png",
+          "alt":"NEP poster"
+        }
+      }
+    ]
   },
   "contact": {
     "tagline": "Let's Work Together..."
