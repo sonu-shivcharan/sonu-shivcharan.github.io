@@ -1,7 +1,7 @@
 @keyframes slideRight {
   0% {
     opacity: 0;
-    transform: translateX(-70%);
+    transform: translateX(-50%);
     } 20%{
   opacity: 1;
 } 100% {
@@ -12,7 +12,7 @@
 @keyframes slideLeft {
   0% {
     opacity: 0;
-    transform: translateX(70%);
+    transform: translateX(50%);
   }
   20%{
     opacity: 1;
@@ -37,7 +37,7 @@
 @keyframes slideUp{
   0%{
     opacity: 0;
-    transform: translateY(70%);
+    transform: translateY(50%);
   }20%{
 opacity: 1;
   } 100%{
