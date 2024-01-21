@@ -426,7 +426,7 @@ section>h2 {
   transition: 0.2s ease;
 }
 .project-item:hover{
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 .project-item .img-container {
   width: 100%;
