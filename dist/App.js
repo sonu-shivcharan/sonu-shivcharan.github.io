@@ -89,7 +89,7 @@ class App extends React.Component {
   render() {
     const state = this.state;
     let i;
-    i = state.screenWidth <= 480 ? 150: 350;
+    i = state.screenWidth <= 480 ? 150: 300;
     return /*#__PURE__*/(
       React.createElement("div", null, /*#__PURE__*/
         React.createElement(Header, {
