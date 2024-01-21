@@ -491,7 +491,7 @@ class ProjectsSection extends React.Component {
         },
           items &&
           items.map(item => {
-            let i = 200,
+            let i = 100,
             j;
             j = props.screenWidth <= 480 ? 0: 400;
             return /*#__PURE__*/(
