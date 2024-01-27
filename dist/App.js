@@ -1,4 +1,8 @@
-import AboutMeSection from "./components/AboutMe.js"
+import AboutMeSection from "./components/AboutMe.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
+  
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -534,20 +538,50 @@ class ContactForm extends React.Component {
     super(props); _defineProperty(this,
       "handleInputChange",
       event => {
-        const {
-          name,
-          value
-        } = event.target;
+        const {name,value} = event.target;
         this.setState({
           [name]: value
         });
-      }); _defineProperty(this,
+      }); 
+const firebaseConfig = {
+    apiKey: "AIzaSyB-DGznEj3XdGajQCCw0fvDrjNca2v-RV8",
+    authDomain: "portfoliosonu.firebaseapp.com",
+    databaseURL: "https://portfoliosonu-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "portfoliosonu",
+    storageBucket: "portfoliosonu.appspot.com",
+    messagingSenderId: "762043520383",
+    appId: "1:762043520383:web:d0d613d78bb1d1090d364a",
+    measurementId: "G-Q6VBD62EY5"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+// Access the database
+const database = getDatabase(app);
+
+      _defineProperty(this,
       "handleSubmit",
       event => {
         event.preventDefault();
-        //
-      }); this.state = {
-      name: "", email: "", message: ""
+this.setState({timestamp: Date.now()});
+  const databaseRef = ref(database, "contactMessages"); // Adjust the path as needed
+  set(databaseRef, this.state)
+    .then(() => {
+      console.log("Contact data saved successfully!");
+      
+      // Clear form fields or display a success message
+    })
+    .catch((error) => {
+      console.error("Error saving contact data:", error);
+      // Handle errors, e.g., display an error message
+    });
+      }); 
+      this.state = {
+      name: "",
+      email: "", 
+      message: "",
+      timestamp:""
     };
   }
 
