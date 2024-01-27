@@ -565,7 +565,7 @@ const database = getDatabase(app);
       event => {
         event.preventDefault();
 this.setState({timestamp: Date.now()});
-  const databaseRef = ref(database, "contactMessages"); // Adjust the path as needed
+  const databaseRef = ref(database, "/contactMessages"); // Adjust the path as needed
   set(databaseRef, this.state)
     .then(() => {
       console.log("Contact data saved successfully!");
@@ -580,8 +580,7 @@ this.setState({timestamp: Date.now()});
       this.state = {
       name: "",
       email: "", 
-      message: "",
-      timestamp:""
+      message: ""
     };
   }
 
