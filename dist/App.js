@@ -564,23 +564,25 @@ const database = getDatabase(app);
       "handleSubmit",
       event => {
         event.preventDefault();
-this.setState({timestamp: Date.now()});
-  const databaseRef = ref(database, "/contactMessages"); // Adjust the path as needed
+this.setState({ timestamp: Date.now() });
+  const contactForm = document.getElementById("contact-form");
+  const databaseRef = ref(database, "/contacts"+name); // Adjust the path as needed
   set(databaseRef, this.state)
     .then(() => {
       console.log("Contact data saved successfully!");
-      
-      // Clear form fields or display a success message
+      contactForm.reset();
+      //TODO : display data submit message/prompt
     })
     .catch((error) => {
       console.error("Error saving contact data:", error);
-      // Handle errors, e.g., display an error message
+      // TODO: Handle errors,display an error message
     });
       }); 
       this.state = {
       name: "",
       email: "", 
-      message: ""
+      message: "",
+      timestamp:""
     };
   }
 
