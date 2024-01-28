@@ -559,12 +559,10 @@ const firebaseConfig = {
   const analytics = getAnalytics(app);
 // Access the database
 const database = getDatabase(app);
-
       _defineProperty(this,
       "handleSubmit",
       event => {
         event.preventDefault();
-this.setState({timestamp: Date.now()});
 const databaseRef = ref(database, "contactMessages/"+this.state.name); // Adjust the path as needed
 console.log(this.state);
   set(databaseRef, this.state)
@@ -587,7 +585,7 @@ console.log(this.state);
       name: "",
       email: "", 
       message: "",
-      timestamp:""
+      timestamp: new Date().toString()
     };
   }
 
