@@ -572,7 +572,7 @@ this.setState({timestamp: Date.now()});
 
       console.log("Contact data saved successfully!");
       
-      console.log(contactForm.reset());
+      console.log(contactForm);
       //TODO : display data submit message/prompt
     })
     .catch((error) => {
@@ -583,8 +583,7 @@ this.setState({timestamp: Date.now()});
       this.state = {
       name: "",
       email: "", 
-      message: "",
-      timestamp:""
+      message: ""
     };
   }
 
