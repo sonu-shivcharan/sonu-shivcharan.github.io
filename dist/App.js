@@ -569,8 +569,9 @@ this.setState({timestamp: Date.now()});
   const databaseRef = ref(database, "contactMessages/"+name); // Adjust the path as needed
   set(databaseRef, this.state)
     .then(() => {
+contactForm.reset();
       console.log("Contact data saved successfully!");
-      contactForm.reset();
+      
       console.log(contactForm);
       //TODO : display data submit message/prompt
     })
