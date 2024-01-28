@@ -318,12 +318,8 @@ class SideNav extends React.Component {
                 title: item.name,
                 onClick: this.props.updateState
               }, /*#__PURE__*/
-
                 React.createElement("li", null, item.name)));
           }))));
-
-
-
   }}
 
 class HeroSection extends React.Component {
@@ -650,9 +646,7 @@ class ContactSection extends React.Component {
   }
   render() {
     const props = this.props;
-    const {
-      contact
-    } = props;
+    const {contact} = props;
     let TagLine;
     if (typeof contact == "object") {
       TagLine = contact.tagline;
@@ -675,7 +669,6 @@ class ContactSection extends React.Component {
             props.scrollTop >= props.scrollHeight ? "slideRight": "shiftLeft"
             }`
           }, /*#__PURE__*/
-
             React.createElement(ContactForm, null)))));
   }}
 
