@@ -563,8 +563,9 @@ const database = getDatabase(app);
       _defineProperty(this,
       "handleSubmit",
       event => {
-        event.preventDefault();
 this.setState({timestamp: Date.now()});
+        event.preventDefault();
+
   const contactForm = document.getElementById("contact-form");
   const databaseRef = ref(database, "contactMessages/"+this.state.name); // Adjust the path as needed
   set(databaseRef, this.state)
@@ -572,7 +573,7 @@ this.setState({timestamp: Date.now()});
 
       console.log("Contact data saved successfully!");
       
-      console.log(contactForm);
+      console.log(this.state);
       //TODO : display data submit message/prompt
     })
     .catch((error) => {
