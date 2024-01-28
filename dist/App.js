@@ -563,17 +563,20 @@ const database = getDatabase(app);
       _defineProperty(this,
       "handleSubmit",
       event => {
-this.setState({timestamp: Date.now()});
         event.preventDefault();
-
+this.setState({timestamp:Date.now()})
   const contactForm = document.getElementById("contact-form");
   const databaseRef = ref(database, "contactMessages/"+this.state.name); // Adjust the path as needed
+console.log(this.state);
   set(databaseRef, this.state)
     .then(() => {
-
       console.log("Contact data saved successfully!");
+      this.setState({
+        name:"",
+        email:"",
+        message:""
+      });
       
-      console.log(this.state);
       //TODO : display data submit message/prompt
     })
     .catch((error) => {
@@ -584,7 +587,8 @@ this.setState({timestamp: Date.now()});
       this.state = {
       name: "",
       email: "", 
-      message: ""
+      message: "",
+      timestamp:""
     };
   }
 
