@@ -566,13 +566,13 @@ const database = getDatabase(app);
         event.preventDefault();
 this.setState({timestamp: Date.now()});
   const contactForm = document.getElementById("contact-form");
-  const databaseRef = ref(database, "contactMessages/"+name); // Adjust the path as needed
+  const databaseRef = ref(database, "contactMessages/"+this.state.name); // Adjust the path as needed
   set(databaseRef, this.state)
     .then(() => {
-contactForm.reset();
+
       console.log("Contact data saved successfully!");
       
-      console.log(contactForm);
+      console.log(contactForm.reset());
       //TODO : display data submit message/prompt
     })
     .catch((error) => {
