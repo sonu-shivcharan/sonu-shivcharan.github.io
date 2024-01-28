@@ -701,7 +701,9 @@ class Footer extends React.Component {
           React.createElement("i", {
             className: "fa fa-heart",
             style: {
-              color: "#fcb4e1"
+              color: "#ff4889",
+              fontSize:"1.5rem",
+              transform: "translateY(4px)"
             }
           }),
           " ", "using",
