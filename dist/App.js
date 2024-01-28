@@ -674,9 +674,7 @@ class ContactSection extends React.Component {
 
 class Footer extends React.Component {
   render() {
-    const {
-      profiles
-    } = this.props;
+    const {profiles} = this.props;
 
     return /*#__PURE__*/(
       React.createElement("footer", {
