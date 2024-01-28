@@ -564,9 +564,8 @@ const database = getDatabase(app);
       "handleSubmit",
       event => {
         event.preventDefault();
-this.setState({timestamp:Date.now()})
-  const contactForm = document.getElementById("contact-form");
-  const databaseRef = ref(database, "contactMessages/"+this.state.name); // Adjust the path as needed
+this.setState({timestamp: Date.now()});
+const databaseRef = ref(database, "contactMessages/"+this.state.name); // Adjust the path as needed
 console.log(this.state);
   set(databaseRef, this.state)
     .then(() => {
