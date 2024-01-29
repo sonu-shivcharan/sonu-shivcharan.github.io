@@ -559,6 +559,7 @@ const database = getDatabase(app);
       "handleSubmit",
       event => {
         event.preventDefault();
+
 const databaseRef = ref(database, "contactMessages/"+this.state.name); // Adjust the path as needed
 console.log(this.state);
   set(databaseRef, this.state)
