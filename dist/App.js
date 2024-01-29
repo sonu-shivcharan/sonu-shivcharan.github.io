@@ -318,12 +318,8 @@ class SideNav extends React.Component {
                 title: item.name,
                 onClick: this.props.updateState
               }, /*#__PURE__*/
-
                 React.createElement("li", null, item.name)));
           }))));
-
-
-
   }}
 
 class HeroSection extends React.Component {
@@ -559,28 +555,34 @@ const firebaseConfig = {
   const analytics = getAnalytics(app);
 // Access the database
 const database = getDatabase(app);
-
       _defineProperty(this,
       "handleSubmit",
       event => {
         event.preventDefault();
-this.setState({timestamp: Date.now()});
-  const databaseRef = ref(database, "/contactMessages/"); // Adjust the path as needed
+
+const databaseRef = ref(database, "contactMessages/"+this.state.name); // Adjust the path as needed
+console.log(this.state);
   set(databaseRef, this.state)
     .then(() => {
       console.log("Contact data saved successfully!");
+      this.setState({
+        name:"",
+        email:"",
+        message:""
+      });
       
-      // Clear form fields or display a success message
+      //TODO : display data submit message/prompt
     })
     .catch((error) => {
       console.error("Error saving contact data:", error);
-      // Handle errors, e.g., display an error message
+      // TODO: Handle errors,display an error message
     });
       }); 
       this.state = {
       name: "",
       email: "", 
-      message: ""
+      message: "",
+      timestamp: new Date().toString()
     };
   }
 
@@ -645,9 +647,7 @@ class ContactSection extends React.Component {
   }
   render() {
     const props = this.props;
-    const {
-      contact
-    } = props;
+    const {contact} = props;
     let TagLine;
     if (typeof contact == "object") {
       TagLine = contact.tagline;
@@ -670,15 +670,12 @@ class ContactSection extends React.Component {
             props.scrollTop >= props.scrollHeight ? "slideRight": "shiftLeft"
             }`
           }, /*#__PURE__*/
-
             React.createElement(ContactForm, null)))));
   }}
 
 class Footer extends React.Component {
   render() {
-    const {
-      profiles
-    } = this.props;
+    const {profiles} = this.props;
 
     return /*#__PURE__*/(
       React.createElement("footer", {
@@ -703,7 +700,9 @@ class Footer extends React.Component {
           React.createElement("i", {
             className: "fa fa-heart",
             style: {
-              color: "#fcb4e1"
+              color: "#ff4889",
+              fontSize:"1.5rem",
+              transform: "translateY(4px)"
             }
           }),
           " ", "using",

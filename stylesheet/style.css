@@ -517,11 +517,11 @@ section>h2 {
   width: 100vw;
   min-height:;
   padding: 2rem;
-  background-color: #ebf3fd;
+  background-color: #142542;
   overflow:;
   position: absolute;
   bottom: 0;
-  color: #1c2e4d;;
+  color: #ebf3fd;
   text-align: center;
 }
 #footer p{
@@ -538,7 +538,7 @@ section>h2 {
 }
 .footer-icon {
   font-size: 1.4rem;
-  color: #1c2e4d;
+  color: #ebf3fd;
 }
 
 
