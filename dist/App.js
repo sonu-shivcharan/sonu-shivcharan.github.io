@@ -2,7 +2,9 @@ import AboutMeSection from "./components/AboutMe.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
-  
+
+//precompiled babel js  
+//for react.js code see src/App.js
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -335,8 +337,8 @@ class HeroSection extends React.Component {
     let circle = {
       borderRadius: "50%",
       animation: "rotate 1s ease 1",
-      transition: "transform 0.3s linear",
-      transform: `rotate(${scrollTop >= 600 ? 300: 0.5 * scrollTop}deg)`
+      transition: "transform 0.2s ease",
+      transform: `rotate(${scrollTop >= 600 ? 300: 0.4 * scrollTop}deg)`
     };
 
     const Circles = /*#__PURE__*/
