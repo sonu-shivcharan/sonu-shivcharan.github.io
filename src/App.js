@@ -476,7 +476,7 @@ class App extends React.Component {
         <h2>{TagLine}</h2>
         </div>
         
-        <div id="form-container" className={`${(props.scrollTop>=props.scrollHeight)?'slideRight':'shiftLeft'}`}>
+        <div id="form-container" >
         <ContactForm />
         </div>
         </div>
