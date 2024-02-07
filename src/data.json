@@ -179,9 +179,9 @@
         "fontAwesomeClass":"fa-brands fa-codepen"
       },
       {
-        "name":"email",
-        "url":"mailto:sonushivcharan@outlook.com",
-        "fontAwesomeClass":"fa fa-envelope"
+        "name":"X-twitter",
+        "url":"https://twitter.com/SonuShivcharan",
+        "fontAwesomeClass":"fa-brands fa-x-twitter"
       },
       {
         "name":"youtube",
