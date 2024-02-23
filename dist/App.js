@@ -92,7 +92,7 @@ class App extends React.Component {
   render() {
     const state = this.state;
     let i;
-    i = state.screenWidth <= 480 ? 150: 300;
+    i = state.screenWidth <= 480 ? 100+(100*0.2): 200+(200*0.2);
     return /*#__PURE__*/(
       React.createElement("div", null, /*#__PURE__*/
         React.createElement(Header, {
@@ -110,7 +110,8 @@ class App extends React.Component {
 
         React.createElement(HeroSection, {
           scrollTop: state.scrollTop,
-          margin: state.heroSectionHeight
+          margin: state.heroSectionHeight,
+          isReady: state.isContentLoaded
         }), /*#__PURE__*/
 
         React.createElement(AboutMeSection, {
@@ -328,8 +329,13 @@ class HeroSection extends React.Component {
       headline: "",
       animation:""
     };
-
+  console.log(this.props)
+if(this.props.isReady){
+    this.setState({animation: "rotate 1s ease 1"});
+    console.log(this.state)
   }
+  }
+  
   render() {
     let scrollTop = this.props.scrollTop;
     console.log(this.props);
