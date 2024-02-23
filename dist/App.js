@@ -111,7 +111,6 @@ class App extends React.Component {
         React.createElement(HeroSection, {
           scrollTop: state.scrollTop,
           margin: state.heroSectionHeight,
-          isReady: state.isContentLoaded
         }), /*#__PURE__*/
 
         React.createElement(AboutMeSection, {
@@ -326,26 +325,19 @@ class HeroSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      headline: "",
-      animation:""
+      headline: ""
     };
-  console.log(this.props)
-if(this.props.isReady){
-    this.setState({animation: "rotate 1s ease 1"});
-    console.log(this.state)
-  }
+
   }
   
   render() {
     let scrollTop = this.props.scrollTop;
-    console.log(this.props);
     let circle = {
       borderRadius: "50%",
-      animation: this.state.animation,
-      transition: "transform 0.3s linear",
+      animation: "rotate 1s ease 1",
+      transition: "transform 0.2s linear",
       transform: `rotate(${scrollTop >= 600 ? 300: 0.5 * scrollTop}deg)`
     };
-
     const Circles = /*#__PURE__*/
     React.createElement("div", {
       id: "circle-container", className: "hero-background"
@@ -531,7 +523,7 @@ class ProjectsSection extends React.Component {
                     href: item.url, target: "_blank"
                   }, /*#__PURE__*/
                     React.createElement("i", {
-                      className: "fa-solid fa-arrow-up-right-from-square"
+                      className: "fa-solid fa-arrow-up-right-from-square view-project"
                     })))));
           }))));
   }}
