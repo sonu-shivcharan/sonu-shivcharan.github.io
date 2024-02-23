@@ -81,8 +81,7 @@ class App extends React.Component {
       }); console.log("Data fetched Sucessfully");
     }).catch(err => console.log("falied to fetch", err)); document.getElementById("footer").style.position = "relative";
   } //updates state
-  componentDidUpdate(prevProps,
-    prevState) {
+  componentDidUpdate(prevProps,prevState) {
     const getHeight = name => document.getElementById(name).offsetHeight; const prevHeight = prevState.aboutSectionHeight; const currHeight = getHeight("about-me-section"); if (prevHeight == null || prevHeight < currHeight) {
       this.setState({
         heroSectionHeight: getHeight("hero-section"), aboutSectionHeight: getHeight("about-me-section"), skillSectionHeight: getHeight("skills-section"), projectsSectionHeight: getHeight("projects-section"), contactSectionHeight: getHeight("contact")
@@ -326,15 +325,17 @@ class HeroSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      headline: ""
+      headline: "",
+      animation:""
     };
 
   }
   render() {
     let scrollTop = this.props.scrollTop;
+    console.log(this.props);
     let circle = {
       borderRadius: "50%",
-      animation: "rotate 1s ease 1",
+      animation: this.state.animation,
       transition: "transform 0.3s linear",
       transform: `rotate(${scrollTop >= 600 ? 300: 0.5 * scrollTop}deg)`
     };
