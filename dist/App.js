@@ -82,7 +82,7 @@ class App extends React.Component {
     }).catch(err => console.log("falied to fetch", err)); document.getElementById("footer").style.position = "relative";
   } //updates state
   componentDidUpdate(prevProps,prevState) {
-    const getHeight = name => document.getElementById(name).offsetHeight; const prevHeight = prevState.aboutSectionHeight; const currHeight = getHeight("about-me-section"); if (prevHeight == null || prevHeight < currHeight) {
+    const getHeight = name => document.getElementById(name).clientHeight; const prevHeight = prevState.aboutSectionHeight; const currHeight = getHeight("about-me-section"); if (prevHeight == null || prevHeight < currHeight) {
       this.setState({
         heroSectionHeight: getHeight("hero-section"), aboutSectionHeight: getHeight("about-me-section"), skillSectionHeight: getHeight("skills-section"), projectsSectionHeight: getHeight("projects-section"), contactSectionHeight: getHeight("contact")
       });
@@ -92,7 +92,8 @@ class App extends React.Component {
   render() {
     const state = this.state;
     let i;
-    i = state.screenWidth <= 480 ? 100+(100*0.2): 200+(200*0.2);
+    i = state.screenWidth <= 480 ? 100+(window.innerHeight*0.1): 200+(window.innerHeight*0.1);
+    console.log(window.innerHeight)
     return /*#__PURE__*/(
       React.createElement("div", null, /*#__PURE__*/
         React.createElement(Header, {
