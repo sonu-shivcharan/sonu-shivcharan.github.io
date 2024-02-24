@@ -81,9 +81,8 @@ class App extends React.Component {
       }); console.log("Data fetched Sucessfully");
     }).catch(err => console.log("falied to fetch", err)); document.getElementById("footer").style.position = "relative";
   } //updates state
-  componentDidUpdate(prevProps,
-    prevState) {
-    const getHeight = name => document.getElementById(name).offsetHeight; const prevHeight = prevState.aboutSectionHeight; const currHeight = getHeight("about-me-section"); if (prevHeight == null || prevHeight < currHeight) {
+  componentDidUpdate(prevProps,prevState) {
+    const getHeight = name => document.getElementById(name).clientHeight; const prevHeight = prevState.aboutSectionHeight; const currHeight = getHeight("about-me-section"); if (prevHeight == null || prevHeight < currHeight) {
       this.setState({
         heroSectionHeight: getHeight("hero-section"), aboutSectionHeight: getHeight("about-me-section"), skillSectionHeight: getHeight("skills-section"), projectsSectionHeight: getHeight("projects-section"), contactSectionHeight: getHeight("contact")
       });
@@ -93,7 +92,8 @@ class App extends React.Component {
   render() {
     const state = this.state;
     let i;
-    i = state.screenWidth <= 480 ? 150: 300;
+    i = state.screenWidth <= 480 ? 100+(window.innerHeight*0.1): 200+(window.innerHeight*0.1);
+    console.log(window.innerHeight)
     return /*#__PURE__*/(
       React.createElement("div", null, /*#__PURE__*/
         React.createElement(Header, {
@@ -111,7 +111,7 @@ class App extends React.Component {
 
         React.createElement(HeroSection, {
           scrollTop: state.scrollTop,
-          margin: state.heroSectionHeight
+          margin: state.heroSectionHeight,
         }), /*#__PURE__*/
 
         React.createElement(AboutMeSection, {
@@ -330,15 +330,15 @@ class HeroSection extends React.Component {
     };
 
   }
+  
   render() {
     let scrollTop = this.props.scrollTop;
     let circle = {
       borderRadius: "50%",
       animation: "rotate 1s ease 1",
-      transition: "transform 0.3s linear",
+      transition: "transform 0.2s linear",
       transform: `rotate(${scrollTop >= 600 ? 300: 0.5 * scrollTop}deg)`
     };
-
     const Circles = /*#__PURE__*/
     React.createElement("div", {
       id: "circle-container", className: "hero-background"
@@ -524,7 +524,7 @@ class ProjectsSection extends React.Component {
                     href: item.url, target: "_blank"
                   }, /*#__PURE__*/
                     React.createElement("i", {
-                      className: "fa-solid fa-arrow-up-right-from-square"
+                      className: "fa-solid fa-arrow-up-right-from-square view-project"
                     })))));
           }))));
   }}
