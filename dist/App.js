@@ -337,7 +337,7 @@ class HeroSection extends React.Component {
       borderRadius: "50%",
       animation: "rotate 1s ease 1",
       transition: "transform 0.2s linear",
-      transform: `rotate(${scrollTop >= 600 ? 300: 0.5 * scrollTop}deg)`
+      transform: `rotate(${scrollTop >= 600 ? 350: 0.8 * scrollTop}deg)`
     };
     const Circles = /*#__PURE__*/
     React.createElement("div", {
@@ -443,7 +443,7 @@ class SkillsSection extends React.Component {
             return /*#__PURE__*/(
               React.createElement("div", {
                 className: `skill ${
-                props.scrollTop >= props.scrollHeight - 100 ?
+                props.scrollTop >= props.scrollHeight - 150 ?
                 "slideUp":
                 "shiftDown"
                 }`,
@@ -498,7 +498,7 @@ class ProjectsSection extends React.Component {
               React.createElement("div", {
                 key: item.name,
                 className: `project-item ${
-                props.scrollTop >= props.scrollHeight - j + item.id * i ?
+                props.scrollTop >= props.scrollHeight  + item.id * i ?
                 "slideUp":
                 "shiftDown"
                 }`
@@ -575,7 +575,7 @@ console.log(this.state);
     })
     .catch((error) => {
       console.error("Error saving contact data:", error);
-      // TODO: Handle errors,display an error message
+      // TODO: Handle errors,display an error in saving message in database
     });
       }); 
       this.state = {
