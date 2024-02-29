@@ -92,8 +92,7 @@ class App extends React.Component {
   render() {
     const state = this.state;
     let i;
-    i = state.screenWidth <= 480 ? 100+(window.innerHeight*0.1): 200+(window.innerHeight*0.1);
-    console.log(window.innerHeight)
+    i = state.screenWidth <= 480 ? 100+(window.innerHeight*0.15): 200+(window.innerHeight*0.15);
     return /*#__PURE__*/(
       React.createElement("div", null, /*#__PURE__*/
         React.createElement(Header, {
@@ -560,11 +559,10 @@ const database = getDatabase(app);
       event => {
         event.preventDefault();
 
-const databaseRef = ref(database, "contactMessages/"+this.state.name); // Adjust the path as needed
-console.log(this.state);
+const databaseRef = ref(database, "contactMessages/"+this.state.name); 
   set(databaseRef, this.state)
     .then(() => {
-      console.log("Contact data saved successfully!");
+      console.log("Contact data saved successfully!", this.state);
       this.setState({
         name:"",
         email:"",
