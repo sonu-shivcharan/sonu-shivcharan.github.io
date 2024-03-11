@@ -562,8 +562,7 @@ const database = getDatabase(app);
 const databaseRef = ref(database, "contactMessages/"+this.state.name); 
 let contactData = this.state;
 contactData.timestamp=new Date().toLocaleString();
-console.log(contactData);
-  set(databaseRef, this.state)
+  set(databaseRef, contactData)
     .then(() => {
       console.log("Contact data saved successfully!");
       alert("Conatct data saved successfully");
@@ -572,8 +571,6 @@ console.log(contactData);
         email:"",
         message:""
       });
-      
-      //TODO : display data submit message/prompt
     })
     .catch((error) => {
       console.error("Error saving contact data:", error);
