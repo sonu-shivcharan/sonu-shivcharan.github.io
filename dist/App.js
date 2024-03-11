@@ -560,9 +560,13 @@ const database = getDatabase(app);
         event.preventDefault();
 
 const databaseRef = ref(database, "contactMessages/"+this.state.name); 
+let contactData = this.state;
+contactData.timestamp=new Date().toLocaleString();
+console.log(contactData);
   set(databaseRef, this.state)
     .then(() => {
-      console.log("Contact data saved successfully!", this.state);
+      console.log("Contact data saved successfully!");
+      alert("Conatct data saved successfully");
       this.setState({
         name:"",
         email:"",
@@ -579,8 +583,7 @@ const databaseRef = ref(database, "contactMessages/"+this.state.name);
       this.state = {
       name: "",
       email: "", 
-      message: "",
-      timestamp: new Date().toString()
+      message: ""
     };
   }
 
