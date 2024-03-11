@@ -16,9 +16,10 @@ class App extends React.Component {
   constructor(props) {
     super(props); _defineProperty(this, "handleResize", () => {
       this.setState({
-        screenWidth: window.innerWidth
+        screenWidth: window.innerWidth,
+        screenHeight:window.innerHeight
       });
-      console.log("resized to : ", this.state.screenWidth);
+      console.log("resized to : ", this.state.screenWidth+"x"+this.state.screenHeight);
     }); _defineProperty(this, "updateState",
 
       event => {
@@ -92,7 +93,7 @@ class App extends React.Component {
   render() {
     const state = this.state;
     let i;
-    i = state.screenWidth <= 480 ? 100+(window.innerHeight*0.15): 200+(window.innerHeight*0.15);
+    i = state.screenWidth <= 480 ? 100+(window.innerHeight*0.15): 200+(window.innerHeight*0.2);
     return /*#__PURE__*/(
       React.createElement("div", null, /*#__PURE__*/
         React.createElement(Header, {
@@ -562,7 +563,7 @@ const database = getDatabase(app);
 const databaseRef = ref(database, "contactMessages/"+this.state.name); 
 let contactData = this.state;
 contactData.timestamp=new Date().toString();
-console.log(contactData)
+console.log(contactData);
   set(databaseRef, contactData)
     .then(() => {
       console.log("Contact data saved successfully!");
@@ -665,7 +666,11 @@ class ContactSection extends React.Component {
             React.createElement("h2", null, TagLine)), /*#__PURE__*/
           React.createElement("div", {
             id: "form-container",
-            
+           className: ` ${
+                props.scrollTop >= props.scrollHeight ?
+                "slideRight":
+                "shiftDown"
+                }`
           }, /*#__PURE__*/
             React.createElement(ContactForm, null)))));
   }}
