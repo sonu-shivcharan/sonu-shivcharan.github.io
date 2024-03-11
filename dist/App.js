@@ -561,7 +561,8 @@ const database = getDatabase(app);
 
 const databaseRef = ref(database, "contactMessages/"+this.state.name); 
 let contactData = this.state;
-contactData.timestamp=new Date().toLocaleString();
+contactData.timestamp=new Date().toString();
+console.log(contactData)
   set(databaseRef, contactData)
     .then(() => {
       console.log("Contact data saved successfully!");
