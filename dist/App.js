@@ -667,7 +667,7 @@ class ContactSection extends React.Component {
           React.createElement("div", {
             id: "form-container",
            className: ` ${
-                props.scrollTop >= props.scrollHeight ?
+                props.scrollTop >= props.scrollHeight-100 ?
                 "slideRight":
                 "shiftDown"
                 }`
