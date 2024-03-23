@@ -206,7 +206,7 @@ background-attachment: fixed;*/
   transform: scale(0.9);
 }
 #circle-container div:hover{
-  animation: rotate ease infinite 0.5s;
+  animation: rotate 0.5 ease infinite;
 }
 .circle1 {
   margin-top: -2rem;
