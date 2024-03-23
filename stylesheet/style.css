@@ -205,9 +205,6 @@ background-attachment: fixed;*/
   outline: 5px solid rgba(165,210,249,0.805);
   transform: scale(0.9);
 }
-#circle-container div:hover{
-  animation: rotate 0.5 ease infinite;
-}
 .circle1 {
   margin-top: -2rem;
   width: calc(200px + 2vw);
