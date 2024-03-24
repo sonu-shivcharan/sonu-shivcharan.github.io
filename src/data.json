@@ -184,9 +184,9 @@
         "fontAwesomeClass":"fa-brands fa-x-twitter"
       },
       {
-        "name":"youtube",
-        "url":"https://youtube.com/@SonuShivcharan24",
-        "fontAwesomeClass":"fa-brands fa-youtube"
-      }]
+        "name":"email",
+        "url":"mailto:sonushivcharan@outlook.com",
+        "fontAwesomeClass":"fa fa-envelope"
+      }] 
   }
 }
