@@ -121,8 +121,18 @@
       }]
   },
   "projects": {
-    "items":[{
-      "id":0,
+    "items":[
+      {
+        "id":0,
+        "name":"Sort Visualizer",
+        "url":"https://sort-visualixer.netlify.app",
+        "img": {
+          "url":"./images/sort-visualizer.png",
+          "alt":"Sort Visualizer"
+        }
+      },
+      {
+      "id":1,
       "name":"Markdown Previewer",
       "url":"https://codepen.io/SonuShivcharan/full/NWLOKLq",
       "img": {
@@ -131,7 +141,7 @@
       }
     },
       {
-        "id":1,
+        "id":2,
         "name":"Random Quote Machine",
         "url":"https://codepen.io/SonuShivcharan/full/QWBjGxX",
         "img": {
@@ -140,7 +150,7 @@
         }
       },
       {
-        "id":2,
+        "id":3,
         "name":"Landing Page",
         "url":"https://codepen.io/SonuShivcharan/full/mdXvXLx",
         "img": {
@@ -149,7 +159,7 @@
         }
       },
        {
-        "id":3,
+        "id":4,
         "name":"NEP Poster",
         "url":"https://sonu-shivcharan.github.io/BCA/FY/NEP-poster/",
         "img": {
